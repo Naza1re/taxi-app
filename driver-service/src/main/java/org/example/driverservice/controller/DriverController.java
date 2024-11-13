@@ -26,13 +26,13 @@ public class DriverController {
     }
 
     // Обновление водителя
-    @PutMapping("/{id}")
+    @PutMapping("/{id}/update")
     public Driver updateDriver(@PathVariable Long id, @RequestBody Driver driver) {
         return driverService.updateDriver(id, driver);
     }
 
     // Удаление водителя
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/{id}/delete")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteDriver(@PathVariable Long id) {
         driverService.deleteDriver(id);
