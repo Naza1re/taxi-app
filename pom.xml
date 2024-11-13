@@ -13,5 +13,11 @@
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+    <modules>
+        <module>driver-service</module>
+        <module>passenger-service</module>
+        <module>ride-service</module>
+        <module>rating-service</module>
+    </modules>
 
 </project>
