@@ -6,6 +6,8 @@ import org.example.driverservice.service.DriverService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/drivers")  // Рекомендуется использовать общий префикс для всех эндпоинтов
@@ -36,5 +38,17 @@ public class DriverController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteDriver(@PathVariable Long id) {
         driverService.deleteDriver(id);
+    }
+
+    // Обновление стутуса доступа
+    @PutMapping("/{id}/update/available")
+    public Driver updateStatusDriver(@PathVariable Long id) {
+        return driverService.updateStatusDriver(id);
+    }
+
+    // Получение всех доступных водителей
+    @GetMapping("/drivers/available")
+    public List<Driver> getAvailableDrivers() {
+        return driverService.getAvailableDrivers();
     }
 }

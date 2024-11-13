@@ -5,6 +5,8 @@ import org.example.driverservice.model.Driver;
 import org.example.driverservice.repository.DriverRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class DriverService {
@@ -35,5 +37,19 @@ public class DriverService {
         if (driverRepository.existsById(id)) {
             driverRepository.deleteById(id);
         }
+    }
+
+    // Обновление статуса водителя
+    public Driver updateStatusDriver(Long id) {
+        return driverRepository.findById(id).map(driver -> {
+            driver.setAvailable(true); // Устанавливаем поле available на true
+            return driverRepository.save(driver); // Сохраняем изменения и возвращаем обновлённого водителя
+        }).orElse(null); // Возвращаем null, если водитель не найден
+    }
+
+
+    // Вернуть список доступных водителей
+    public List<Driver> getAvailableDrivers() {
+        return driverRepository.findAllByAvailableTrue();
     }
 }
