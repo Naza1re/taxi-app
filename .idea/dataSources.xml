@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="passenger_db@localhost [2]" uuid="5895d50c-4be9-4c3b-a70a-058b805fd526">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/passenger_db</jdbc-url>
     <data-source source="LOCAL" name="taxi@localhost" uuid="887734c9-372d-4264-92be-7ed624ca0800">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>

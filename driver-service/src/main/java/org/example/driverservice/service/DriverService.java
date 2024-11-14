@@ -1,3 +1,4 @@
+
 package org.example.driverservice.service;
 
 import lombok.RequiredArgsConstructor;
@@ -53,3 +54,4 @@ public class DriverService {
         return driverRepository.findAllByAvailableTrue();
     }
 }
+

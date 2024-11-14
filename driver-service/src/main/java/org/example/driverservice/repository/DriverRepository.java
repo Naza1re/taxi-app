@@ -1,3 +1,4 @@
+
 package org.example.driverservice.repository;
 
 import org.example.driverservice.model.Driver;
@@ -10,3 +11,4 @@ import java.util.List;
 public interface DriverRepository extends JpaRepository<Driver, Long> {
     List<Driver> findAllByAvailableTrue();
 }
+
